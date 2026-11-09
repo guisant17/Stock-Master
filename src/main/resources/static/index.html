@@ -22,8 +22,10 @@
         th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
         th { background-color: #007bff; color: white; }
 
-        .linha-vencida { background-color: #f8d7da !important; }
-        .linha-alerta { background-color: #fff3cd !important; }
+        .linha-boa { background-color: #bbf7d0 !important; color: #14532d; font-weight: 600; }
+        .linha-alerta { background-color: #fed7aa !important; color: #9a3412; font-weight: 700; }
+        .linha-vencida { background-color: #fecaca !important; color: #991b1b; font-weight: 700; }
+        .linha-boa td:first-child, .linha-alerta td:first-child, .linha-vencida td:first-child { border-left: 7px solid currentColor; }
     </style>
 </head>
 <body>
@@ -106,7 +108,7 @@
                         const validade = new Date(produto.dataValidade + "T00:00:00");
                         const diasRestantes = Math.ceil((validade - hoje) / (1000 * 60 * 60 * 24));
                         
-                        let classeCor = "";
+                        let classeCor = "linha-boa";
                         if (diasRestantes <= 0) {
                             classeCor = "linha-vencida"; 
                         } else if (diasRestantes <= 30) {
