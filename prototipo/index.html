@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stock Master - Protótipo</title>
+<style>
+:root{--blue:#0b5ed7;--green:#198754;--red:#dc3545;--ink:#1f2937;--line:#d8dee6}
+*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:var(--ink);font:16px Arial,sans-serif}
+header{background:#fff;border-bottom:1px solid var(--line);padding:26px max(22px,calc((100% - 1080px)/2));display:flex;justify-content:space-between;align-items:center}
+h1{font-size:25px;margin:0}header small{color:#67717e}.wrap{max-width:1080px;margin:30px auto;padding:0 20px}.tag{color:#795548;background:#fff3cd;border:1px solid #ffe69c;border-radius:20px;padding:7px 12px;font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;margin:20px 0;box-shadow:0 1px 3px #0000000d}h2{font-size:19px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(5,minmax(115px,1fr)) auto;gap:12px;align-items:end}label{display:grid;gap:6px;font-size:13px;font-weight:bold}input,select{width:100%;border:1px solid #bac3ce;border-radius:5px;padding:10px;background:#fff;font:inherit}button{border:0;border-radius:5px;padding:11px 15px;color:#fff;background:var(--blue);font-weight:bold}button.green{background:var(--green)}button.red{background:var(--red);padding:7px 9px;font-size:12px}.hint{font-size:13px;color:#67717e;margin:12px 0 0}table{width:100%;border-collapse:collapse;background:#fff}th{background:var(--blue);color:#fff;text-align:left;padding:13px}td{padding:13px;border-bottom:1px solid var(--line)}tr.alert{background:#fff3cd}tr.expired{background:#f8d7da}@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}table{font-size:13px}th,td{padding:9px}}
+</style></head>
+<body>
+<header><div><h1>📦 Stock Master</h1><small>Gestão de produtos e controle de estoque</small></div><span class="tag">Protótipo demonstrativo</span></header>
+<main class="wrap">
+<section class="card"><h2>Movimentação de estoque</h2><div class="grid"><label>ID do produto<input type="number" placeholder="Ex.: 101"></label><label>Ação<select><option>Entrada</option><option>Saída (baixa)</option></select></label><label>Quantidade<input type="number" placeholder="0"></label><label>Peso (kg)<input type="number" placeholder="0,00"></label><button>Registrar movimentação</button></div></section>
+<section class="card"><h2>Cadastrar novo produto</h2><div class="grid"><label>ID<input type="number" placeholder="Ex.: 103"></label><label>Descrição<input placeholder="Nome do produto"></label><label>Quantidade<input type="number" placeholder="0"></label><label>Peso (kg)<input type="number" placeholder="0,00"></label><label>Validade<input type="date"></label><button class="green">Salvar produto</button></div><p class="hint">Versão visual para apresentação acadêmica. Os botões não registram dados nesta publicação.</p></section>
+<section class="card"><h2>Produtos em estoque</h2><table><thead><tr><th>ID</th><th>Descrição</th><th>Quantidade</th><th>Peso (kg)</th><th>Validade</th><th>Ações</th></tr></thead><tbody><tr><td>101</td><td>Arroz 5 kg</td><td>40</td><td>200,00</td><td>2027-05-18</td><td><button class="red">Excluir</button></td></tr><tr class="alert"><td>102</td><td>Leite integral</td><td>18</td><td>18,00</td><td>2026-11-25</td><td><button class="red">Excluir</button></td></tr><tr class="expired"><td>103</td><td>Molho de tomate</td><td>8</td><td>2,72</td><td>2026-10-30</td><td><button class="red">Excluir</button></td></tr></tbody></table></section>
+</main></body></html>
